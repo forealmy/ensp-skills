@@ -1,5 +1,7 @@
 ---
 name: ensp
+license: MIT
+version: 1.0.0
 description: Always use when user asks to create, generate, or design a network topology diagram for eNSP (Enterprise Network Simulation Platform), or mentions creating eNSP topologies, network simulations with Huawei devices (AR routers, S5700 switches, PC, Cloud, etc.).
 ---
 
@@ -35,18 +37,71 @@ Example filenames:
 
 ## Device types supported
 
-| Model | Description | Common slot config |
-|-------|-------------|-------------------|
-| AR1220 | Router | 2GE + 8Ethernet + Serial |
-| AR2220 | Router | 2GE + Serial |
+### Routers
+
+| Model | Description | Interface Config |
+|-------|-------------|------------------|
+| AR201 | Router | Ethernet x8 + Ethernet x1 |
+| AR1220 | Router | 2GE + 8Ethernet |
+| AR2220 | Router | GE x1 + GE x2 + Serial x2 |
+| AR2240 | Router | GE x1 + GE x2 |
+| AR3260 | Router | GE x1 + GE x2 |
+| Router | Generic Router | Ethernet x2 + GE x4 + Serial x4 |
+| NE40E | Enterprise Router | 10x Ethernet (slot format) |
+| NE5000E | Core Router | 10x Ethernet (slot format) |
+| NE9000 | Core Router | 10x Ethernet (slot format) |
+| R250D | Router | GE x1 |
+
+### Switches
+
+| Model | Description | Interface Config |
+|-------|-------------|------------------|
+| S3700 | Switch | Ethernet x22 + GE x2 |
 | S5700 | Switch | 24GE |
+| CE6800 | Data Center Switch | 20x GE (slot format) |
+| CE12800 | Data Center Switch | 10x GE (slot format) |
+| CX | Switch | 10x Ethernet (slot format) |
+
+### Firewalls
+
+| Model | Description | Interface Config |
+|-------|-------------|------------------|
+| USG5500 | Firewall | GE x9 |
+| USG6000V | Firewall | GE x1 (slot0) + GE x7 (slot1) |
+
+### Wireless
+
+| Model | Description | Interface Config |
+|-------|-------------|------------------|
+| AC6005 | Wireless AC | 8GE |
+| AC6605 | Wireless AC | 24GE |
+| AP2050 | Wireless AP | 5GE |
+| AP3030 | Wireless AP | 1GE |
+| AP4030 | Wireless AP | 2GE |
+| AP4050 | Wireless AP | 2GE |
+| AP5030 | Wireless AP | 2GE |
+| AP6050 | Wireless AP | 2GE |
+| AP7030 | Wireless AP | 2GE |
+| AP7050 | Wireless AP | 2GE |
+| AP8030 | Wireless AP | 3GE |
+| AP8130 | Wireless AP | 3GE |
+| AP9131 | Wireless AP | 2GE |
+| AD9430 | LTE Module | 28GE |
+| STA | Wireless Station | Wireless |
+| Cellphone | Mobile Device | Wireless |
+
+### Endpoints
+
+| Model | Description | Interface Config |
+|-------|-------------|------------------|
 | PC | PC | 1GE |
 | Laptop | Laptop | 1GE |
+| Server | Server | 1Ethernet |
+| Client | Client | 1Ethernet |
 | MCS | Multicast Server | 1Ethernet |
 | Cloud | Cloud/BNI | Ethernet interfaces |
-| AC6005 | Wireless AC | 8GE |
-| AP6050 | Wireless AP | 2GE |
-| STA | Wireless Station | Wireless |
+| FRSW | Frame Relay Switch | Serial x16 |
+| HUB | Ethernet HUB | Ethernet x16 |
 
 ## Connection types
 

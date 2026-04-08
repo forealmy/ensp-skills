@@ -48,6 +48,16 @@
 
 ### Device Models Reference
 
+#### AR201 Router
+```xml
+<dev ... model="AR201" ...>
+    <slot number="slot17" isMainBoard="1">
+        <interface sztype="Ethernet" interfacename="Ethernet" count="8" />
+        <interface sztype="Ethernet" interfacename="Ethernet" count="1" />
+    </slot>
+</dev>
+```
+
 #### AR1220 Router
 ```xml
 <dev ... model="AR1220" ...>
@@ -68,6 +78,47 @@
         <interface sztype="Serial" interfacename="Serial" count="2" />
     </slot>
     <slot isMainBoard="0" id="3" type="521" />
+</dev>
+```
+
+#### AR2240 Router
+```xml
+<dev ... model="AR2240" ...>
+    <slot number="slot17" isMainBoard="1">
+        <interface sztype="Ethernet" interfacename="GE" count="1" />
+        <interface sztype="Ethernet" interfacename="GE" count="2" />
+    </slot>
+</dev>
+```
+
+#### AR3260 Router
+```xml
+<dev ... model="AR3260" ...>
+    <slot number="slot17" isMainBoard="1">
+        <interface sztype="Ethernet" interfacename="GE" count="1" />
+        <interface sztype="Ethernet" interfacename="GE" count="2" />
+    </slot>
+</dev>
+```
+
+#### Generic Router
+```xml
+<dev ... model="Router" ...>
+    <slot number="slot17" isMainBoard="1">
+        <interface sztype="Ethernet" interfacename="Ethernet" count="2" />
+        <interface sztype="Ethernet" interfacename="GE" count="4" />
+        <interface sztype="Serial" interfacename="Serial" count="4" />
+    </slot>
+</dev>
+```
+
+#### S3700 Switch
+```xml
+<dev ... model="S3700" ...>
+    <slot number="slot17" isMainBoard="1">
+        <interface sztype="Ethernet" interfacename="Ethernet" count="22" />
+        <interface sztype="Ethernet" interfacename="GE" count="2" />
+    </slot>
 </dev>
 ```
 
@@ -111,11 +162,116 @@
 </dev>
 ```
 
+#### Server
+```xml
+<dev ... model="Server" settings="-domain 0 -eth XX-XX-XX-XX-XX-XX -ipaddr 0.0.0.0 -ipmask 255.255.255.0 -gateway 0.0.0.0 ..." ...>
+    <slot number="slot17" isMainBoard="1">
+        <interface sztype="Ethernet" interfacename="Ethernet" count="1" />
+    </slot>
+</dev>
+```
+
+#### Client
+```xml
+<dev ... model="Client" settings="-domain 0 -eth XX-XX-XX-XX-XX-XX -ipaddr 0.0.0.0 -ipmask 255.255.255.0 -gateway 0.0.0.0 ..." ...>
+    <slot number="slot17" isMainBoard="1">
+        <interface sztype="Ethernet" interfacename="Ethernet" count="1" />
+    </slot>
+</dev>
+```
+
+#### FRSW (Frame Relay Switch)
+```xml
+<dev ... model="FRSW" ...>
+    <slot number="slot17" isMainBoard="1">
+        <interface sztype="Serial" interfacename="Serial" count="16" />
+    </slot>
+</dev>
+```
+
+#### HUB
+```xml
+<dev ... model="HUB" ...>
+    <slot number="slot17" isMainBoard="1">
+        <interface sztype="Ethernet" interfacename="Ethernet" count="16" />
+    </slot>
+</dev>
+```
+
 #### MCS (Multicast Server)
 ```xml
 <dev ... model="MCS" settings=" -simpc_ip 1.1.1.2 -simpc_mask 255.255.255.0 -simpc_gateway 1.1.1.1 -simpc_mac XX-XX-XX-XX-XX-XX -simpc_mc_dstip 225.1.1.1 ..." ...>
     <slot number="slot17" isMainBoard="1">
         <interface sztype="Ethernet" interfacename="Ethernet" count="1" />
+    </slot>
+</dev>
+```
+
+#### NE40E/NE5000E/NE9000 Router
+```xml
+<dev ... model="NE40E" ...>
+    <slot id="1">
+        <interface category="Ethernet" type="Ethernet" slotIndex="1" cardIndex="0" interfaceIndex="0" />
+        <interface category="Ethernet" type="Ethernet" slotIndex="1" cardIndex="0" interfaceIndex="1" />
+        <!-- ... 共10个接口，interfaceIndex 0-9 -->
+    </slot>
+</dev>
+```
+
+#### CE6800 Switch
+```xml
+<dev ... model="CE6800" ...>
+    <slot id="1">
+        <interface category="Ethernet" type="GE" slotIndex="1" cardIndex="0" interfaceIndex="0" />
+        <interface category="Ethernet" type="GE" slotIndex="1" cardIndex="0" interfaceIndex="1" />
+        <!-- ... 共20个接口，interfaceIndex 0-19 -->
+    </slot>
+</dev>
+```
+
+#### CE12800 Switch
+```xml
+<dev ... model="CE12800" ...>
+    <slot id="1">
+        <interface category="Ethernet" type="GE" slotIndex="1" cardIndex="0" interfaceIndex="0" />
+        <interface category="Ethernet" type="GE" slotIndex="1" cardIndex="0" interfaceIndex="1" />
+        <!-- ... 共10个接口，interfaceIndex 0-9 -->
+    </slot>
+</dev>
+```
+
+#### CX Switch
+```xml
+<dev ... model="CX" ...>
+    <slot id="1">
+        <interface category="Ethernet" type="Ethernet" slotIndex="1" cardIndex="0" interfaceIndex="0" />
+        <interface category="Ethernet" type="Ethernet" slotIndex="1" cardIndex="0" interfaceIndex="1" />
+        <!-- ... 共10个接口，interfaceIndex 0-9 -->
+    </slot>
+</dev>
+```
+
+#### USG5500 Firewall
+```xml
+<dev ... model="USG5500" ...>
+    <slot number="slot17" isMainBoard="1">
+        <interface sztype="Ethernet" interfacename="GE" count="9" />
+    </slot>
+</dev>
+```
+
+#### USG6000V Firewall
+```xml
+<dev ... model="USG6000V" ...>
+    <slot id="1">
+        <interface category="Ethernet" type="GE" slotIndex="0" cardIndex="0" interfaceIndex="0" />
+        <interface category="Ethernet" type="GE" slotIndex="1" cardIndex="0" interfaceIndex="0" />
+        <interface category="Ethernet" type="GE" slotIndex="1" cardIndex="0" interfaceIndex="1" />
+        <interface category="Ethernet" type="GE" slotIndex="1" cardIndex="0" interfaceIndex="2" />
+        <interface category="Ethernet" type="GE" slotIndex="1" cardIndex="0" interfaceIndex="3" />
+        <interface category="Ethernet" type="GE" slotIndex="1" cardIndex="0" interfaceIndex="4" />
+        <interface category="Ethernet" type="GE" slotIndex="1" cardIndex="0" interfaceIndex="5" />
+        <interface category="Ethernet" type="GE" slotIndex="1" cardIndex="0" interfaceIndex="6" />
     </slot>
 </dev>
 ```
@@ -129,6 +285,15 @@
 </dev>
 ```
 
+#### AC6605 Wireless Controller
+```xml
+<dev ... model="AC6605" ...>
+    <slot number="slot17" isMainBoard="1">
+        <interface sztype="Ethernet" interfacename="GE" count="24" />
+    </slot>
+</dev>
+```
+
 #### AP6050 Wireless AP
 ```xml
 <dev ... model="AP6050" settings=" -apMac XX-XX-XX-XX-XX-XX -apSN XXXXXXXXXX" ...>
@@ -138,9 +303,65 @@
 </dev>
 ```
 
+#### AP Series (AP2050/AP3030/AP4030/AP4050/AP5030/AP6050/AP7030/AP7050/AP8030/AP8130/AP9131)
+```xml
+<!-- AP2050: GE x5 -->
+<dev ... model="AP2050" settings=" -apMac XX-XX-XX-XX-XX-XX -apSN XXXXXXXXXX" ...>
+    <slot number="slot17" isMainBoard="1">
+        <interface sztype="Ethernet" interfacename="GE" count="5" />
+    </slot>
+</dev>
+
+<!-- AP3030: GE x1 -->
+<dev ... model="AP3030" settings=" -apMac XX-XX-XX-XX-XX-XX -apSN XXXXXXXXXX" ...>
+    <slot number="slot17" isMainBoard="1">
+        <interface sztype="Ethernet" interfacename="GE" count="1" />
+    </slot>
+</dev>
+
+<!-- AP4030/AP4050/AP5030/AP6050/AP7030/AP7050/AP9131: GE x2 -->
+<dev ... model="AP4030" settings=" -apMac XX-XX-XX-XX-XX-XX -apSN XXXXXXXXXX" ...>
+    <slot number="slot17" isMainBoard="1">
+        <interface sztype="Ethernet" interfacename="GE" count="2" />
+    </slot>
+</dev>
+
+<!-- AP8030/AP8130: GE x3 -->
+<dev ... model="AP8030" settings=" -apMac XX-XX-XX-XX-XX-XX -apSN XXXXXXXXXX" ...>
+    <slot number="slot17" isMainBoard="1">
+        <interface sztype="Ethernet" interfacename="GE" count="3" />
+    </slot>
+</dev>
+```
+
+#### AD9430 (LTE Module)
+```xml
+<dev ... model="AD9430" ...>
+    <slot number="slot17" isMainBoard="1">
+        <interface sztype="Ethernet" interfacename="GE" count="28" />
+    </slot>
+</dev>
+```
+
+#### R250D Router
+```xml
+<dev ... model="R250D" settings=" -apMac XX-XX-XX-XX-XX-XX -apSN XXXXXXXXXX" ...>
+    <slot number="slot17" isMainBoard="1">
+        <interface sztype="Ethernet" interfacename="GE" count="1" />
+    </slot>
+</dev>
+```
+
 #### STA (Wireless Station)
 ```xml
 <dev ... model="STA" settings=" -simsta_ip 0.0.0.0 -simsta_mask 0.0.0.0 -simsta_gateway 0.0.0.0 ..." ...>
+    <slot number="slot17" isMainBoard="1" />
+</dev>
+```
+
+#### Cellphone (Wireless)
+```xml
+<dev ... model="Cellphone" settings=" -simsta_ip 0.0.0.0 -simsta_mask 0.0.0.0 -simsta_gateway 0.0.0.0 ..." ...>
     <slot number="slot17" isMainBoard="1" />
 </dev>
 ```
