@@ -1,7 +1,7 @@
 ---
 name: ensp
 license: MIT
-version: 1.0.0
+version: 1.1
 description: Always use when user asks to create, generate, or design a network topology diagram for eNSP (Enterprise Network Simulation Platform), or mentions creating eNSP topologies, network simulations with Huawei devices (AR routers, S5700 switches, PC, Cloud, etc.).
 ---
 
